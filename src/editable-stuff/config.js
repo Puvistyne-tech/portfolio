@@ -54,8 +54,8 @@ const about = {
     imageLink: require("../editable-stuff/puvistyne.png"),
     imageSize: 375,
     message:
-        "My name is Puvistyne Rajasegar. I’m a graduate of 2023 from University of Gustave Eiffel in France with a degree in Computer Engineering. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
-    resume: "https://drive.google.com/file/d/1AhjlpEGkHbjOynwAY-_HfCSeYZM8txwq/view?usp=sharing",
+        "My name is Puvistyne Rajasegar. I'm a graduate of 2023 from University of Gustave Eiffel in France with a degree in Computer Engineering. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
+    resume: "https://drive.google.com/drive/folders/1u58MkEcbVTdq-WkbCJQBuAwHLrjCZpSz?usp=sharing",
 };
 
 // PROJECTS SECTION

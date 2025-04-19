@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
+import { Link } from "react-router-dom";
 
 const Navigation = React.forwardRef((props, ref) => {
   // const { showBlog, FirstName } = config;
@@ -13,9 +14,10 @@ const Navigation = React.forwardRef((props, ref) => {
   const navbarMenuRef = React.useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
+
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      if (!navbarDimensions) return;
+      if (!navbarDimensions || !ref?.current) return;
       currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
         ? setIsTop(true)
         : setIsTop(false);
@@ -25,7 +27,7 @@ const Navigation = React.forwardRef((props, ref) => {
   );
 
   React.useEffect(() => {
-    if (!navbarDimensions) return;
+    if (!navbarDimensions || !ref?.current) return;
     navBottom - scrollPosition >= ref.current.offsetTop
       ? setIsTop(false)
       : setIsTop(true);
@@ -50,7 +52,6 @@ const Navigation = React.forwardRef((props, ref) => {
             </NavLink>
           } */}
           {repos.show && (
-
             <NavLink
               href={process.env.PUBLIC_URL + "/#projects"}
             >
@@ -81,6 +82,13 @@ const Navigation = React.forwardRef((props, ref) => {
               Skills
             </NavLink>
           )}
+          <NavLink
+            className="nav-item lead"
+            as={Link}
+            to="/pinterest"
+          >
+            Pinterest
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
